@@ -105,10 +105,9 @@ void rotateVector(vector* vect, float angle) {
      * @param angle: Float in radians
     */
     if(vect->dim-2 == 0) {
-        float beta = angle * 180 / PI;
         float x2, y2;
-        x2 = cos(beta) * vect->x - sin(beta) * vect->y;
-        y2 = sin(beta) * vect->x + cos(beta) * vect->y;
+        x2 = cos(angle) * vect->x - sin(angle) * vect->y;
+        y2 = sin(angle) * vect->x + cos(angle) * vect->y;
         *vect = setVector(x2, y2, 0, (vect->dim-2));
         return;
     } else {
