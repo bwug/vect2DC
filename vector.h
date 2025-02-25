@@ -3,7 +3,7 @@
 #include <math.h>
 
 #ifndef PI
-#define PI 3.14
+#define PI 3.141592653
 #endif
 
 #ifndef VECTOR_H
@@ -31,5 +31,11 @@ float dotProduct(vector* vectorA, vector* vectorB, int definition);
 vector addVector(vector* vectorA, vector* vectorB);
 
 void rotateVector(vector* vect, float angle);
+
+void matMul(int rows, int cols, float matrix[rows][cols], vector * vect, float * result);
+
+void rotateX(float matrix[3][3], float angle);
+void rotateY(float matrix[3][3], float angle);
+void rotateZ(float matrix[3][3], float angle);
 
 #endif
