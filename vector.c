@@ -4,11 +4,6 @@
 
 #include "vector.h"
 
-const float orthMatrix[2][3] = {
-    {1, 0, 0},
-    {0, 1, 0}
-}; // Produce a "light" source infinifor(int i = 0; i < size; i++) {
-
 void handleError(const char* errorMessage) {
     printf("%s\n", errorMessage);
     exit(0);
@@ -159,4 +154,8 @@ void rotateZ(float matrix[3][3], float angle) {
     matrix[0][0] = cos(angle); matrix[0][1] = -sin(angle); matrix[0][2] = 0;
     matrix[1][0] = sin(angle); matrix[1][1] = cos(angle);  matrix[1][2] = 0;
     matrix[2][0] = 0;          matrix[2][1] = 0;           matrix[2][2] = 1;
+}
+
+void orthMult(vector* vect) {
+    matMul(2, 3, orthMatrix, vect, (float[3]){0});
 }

@@ -9,6 +9,11 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
+static float orthMatrix[2][3] = {
+    {1, 0, 0},
+    {0, 1, 0}
+}; // Produce a "light" source infinifor(int i = 0; i < size; i++) {
+
 typedef struct {
     float x;
     float y;
@@ -37,5 +42,7 @@ void matMul(int rows, int cols, float matrix[rows][cols], vector * vect, float *
 void rotateX(float matrix[3][3], float angle);
 void rotateY(float matrix[3][3], float angle);
 void rotateZ(float matrix[3][3], float angle);
+
+void orthMult(vector* vect);
 
 #endif

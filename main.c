@@ -47,15 +47,20 @@ int main()
             
             // Rotates each vector at 30 degrees X Y and Z and uses paramter
             // passing by reference to re-setVector the vector during calculation
+            // Then projects using orthoganol projection to set values correctly
             rotateX(matrixX, 30);
             matMul(3, 3, matrixX, &vectors[ind], (float[3]){0});
+            orthMult(&vectors[ind]);
             
             rotateY(matrixY, 30);
             matMul(3, 3, matrixY, &vectors[ind], (float[3]){0});
+            orthMult(&vectors[ind]);
             
             rotateZ(matrixZ, 30); 
             matMul(3, 3, matrixZ, &vectors[ind], (float[3]){0});
             
+            orthMult(&vectors[ind]);
+
             // Print debugging
             printf("\n=================================\n");
             printf("%f | %f | %f", vectors[ind].x, vectors[ind].y, vectors[ind].z);
